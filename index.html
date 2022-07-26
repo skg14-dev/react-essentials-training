@@ -18,25 +18,34 @@
         let robot = "mon"
         let cowboy = "tues"
         let moon = "wed"
-        function Header() {
+        function Header(props) {
+            console.log(props);
             return (
                 <header>
-                    <h1>Kitchen</h1>
+                    <h1>{props.name} Kitchen</h1>
                 </header>
             )
         }
-        function Main() {
+        function Main(props) {
             return (
                 <section>
-                    <p>We serve food</p>
+                    <p>We serve {props.adjective} food</p>
                 </section>
+            )
+        }
+        function Footer(props) {
+            return (
+                <footer>
+                    <p>Copyright {props.year}</p>
+                </footer>
             )
         }
         function App() {
             return (
                 <>
-                    <Header />
-                    <Main />
+                    <Header name="Mexico" />
+                    <Main adjective="awesome" />
+                    <Footer year={new Date().getFullYear()} />
                 </>
             )
         }
