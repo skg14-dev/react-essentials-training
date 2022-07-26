@@ -26,10 +26,15 @@
                 </header>
             )
         }
+
         function Main(props) {
             return (
                 <section>
-                    <p>We serve {props.adjective} food</p>
+                    <ul>
+                        {props.dishes.map((dish) => (
+                            <li key={dish.id}>{dish.title}</li>
+                        ))}
+                    </ul>
                 </section>
             )
         }
@@ -40,11 +45,22 @@
                 </footer>
             )
         }
+        const dishes = [
+            "Cheese",
+            "Soup",
+            "Potato",
+            "Pizza"
+        ]
+        const dishObjects = dishes.map((dish, i) =>
+        ({
+            id: i,
+            title: dish
+        }));
         function App() {
             return (
                 <>
                     <Header name="Mexico" />
-                    <Main adjective="awesome" />
+                    <Main dishes={dishObjects} />
                     <Footer year={new Date().getFullYear()} />
                 </>
             )
