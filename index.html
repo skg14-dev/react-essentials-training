@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <title>React</title>
 </head>
 
@@ -13,14 +14,13 @@
     <div id="root">
 
     </div>
-    <script type="text/javascript">
-        let heading = React.createElement(
-            "h1",
-            null,
-            "Getting started with !!"
-        );
+    <script type="text/babel">
         ReactDOM.render(
-            heading,
+            <ul>
+                <li>Monday</li>
+                <li>Tuesday</li>
+                <li>Wednesday</li>
+            </ul>,
             document.getElementById("root")
         );
     </script>
