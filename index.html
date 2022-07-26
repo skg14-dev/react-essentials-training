@@ -18,13 +18,30 @@
         let robot = "mon"
         let cowboy = "tues"
         let moon = "wed"
+        function Header() {
+            return (
+                <header>
+                    <h1>Kitchen</h1>
+                </header>
+            )
+        }
+        function Main() {
+            return (
+                <section>
+                    <p>We serve food</p>
+                </section>
+            )
+        }
+        function App() {
+            return (
+                <>
+                    <Header />
+                    <Main />
+                </>
+            )
+        }
         ReactDOM.render(
-            <ul>
-                <li>{robot}</li>
-                <li>{cowboy}</li>
-                <li>{moon.toLocaleUpperCase()}</li>
-                <li>{moon.length}</li>
-            </ul>,
+            <App />,
             document.getElementById("root")
         );
     </script>
