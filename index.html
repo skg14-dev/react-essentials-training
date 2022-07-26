@@ -15,11 +15,15 @@
 
     </div>
     <script type="text/babel">
+        let robot = "mon"
+        let cowboy = "tues"
+        let moon = "wed"
         ReactDOM.render(
             <ul>
-                <li>Monday</li>
-                <li>Tuesday</li>
-                <li>Wednesday</li>
+                <li>{robot}</li>
+                <li>{cowboy}</li>
+                <li>{moon.toLocaleUpperCase()}</li>
+                <li>{moon.length}</li>
             </ul>,
             document.getElementById("root")
         );
