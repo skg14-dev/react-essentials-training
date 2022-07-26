@@ -1,16 +1,12 @@
 import './App.css';
-import { useState, useEffect } from "react";
+import { useState, useEffect, useReducer } from "react";
 
 function App() {
-  const [emotion,setEmotion] = useState("happy");
-  useEffect(()=> {
-
-    console.log(`Its ${emotion}`);
-  },[emotion]);
+  const [checked, setChecked] = useReducer((checked) => !checked, false);
   return (
     <div className='App'>
-      <h1>Current emotion is {emotion}</h1>
-      <button onClick={() => setEmotion("sad")}>sad</button>
+      <input type="checkbox" value={checked} onChange={setChecked} />
+      <label>{checked ? "checked":"unchecked"}</label>
     </div>
   );
 }
