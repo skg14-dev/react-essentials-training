@@ -1,29 +1,34 @@
 import './App.css';
-import { useEffect, useState } from "react";
 
-const tahoo_peeks = [
-  { name : "Freel", elevation: 1234},
-  { name : "Pyramid", elevation: 5678}
-]
-
-function List({data, renderItem, renderEmpty}) {
-  return !data.length ? (renderEmpty) : 
-  (
-    <ul>
-      {data.map((item) => (
-        <li key={item.name}>{renderItem(item)}</li>
-      ))}
-    </ul>
-  )
-} 
-
-function App() {
+export function Home(){
   return(
-    <List data={tahoo_peeks} renderEmpty={<p>List is empty</p>} renderItem={(item) =>
-    (<>
-      {item.name} -{item.elevation}
-    </>)} />
+    <div>
+      <h1>My Website</h1>
+    </div>
+  )
+}
+export function About() {
+  return(
+    <div>
+    <h1>About us</h1>
+  </div>
+  
+  )
+
+}
+
+export function Contact() {
+  return(
+    <div>
+    <h1>Contact us</h1>
+  </div>
+  )
+
+}
+
+export function App() {
+  return(
+    <h1>Hello world</h1>
   )
 }
 
-export default App;
